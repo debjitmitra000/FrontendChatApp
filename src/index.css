@@ -1,0 +1,65 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Scrollbar Styling */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #694ac7;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #533a9e;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #503bba;
+}
+
+/* Audio */
+
+audio::-webkit-media-controls-panel {
+  background-color: #1f2a38 !important;
+}
+audio::-webkit-media-controls-play-button {
+  color: white !important;
+  filter: invert(1) !important;
+}
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-mute-button{
+  display: none !important;
+}
+
+audio::-webkit-media-controls-timeline {
+  filter: invert(1) !important;
+}
+
+audio::-webkit-media-controls-seekbar {
+  filter: invert(1) !important;
+}
+audio::-webkit-media-controls-enclosure {
+  border-radius: 8px;
+  background-color: #111826;
+}
+
+/* Video */
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  color: white;
+}
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-mute-button ,
+video::-webkit-media-controls-fullscreen-button,
+video::-webkit-media-controls-volume-control 
+{
+  display: none !important;
+}
+
+

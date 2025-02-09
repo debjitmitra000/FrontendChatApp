@@ -1,0 +1,28 @@
+.search-scrollbar::-webkit-scrollbar {
+  width: 6px; 
+}
+.search-scrollbar::-webkit-scrollbar-thumb {
+  background: #eeebeb; 
+  border-radius: 50px;
+}
+.search-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #eeebeb;
+}
+.search-scrollbar::-webkit-scrollbar-thumb:active {
+  background: #ffffff; 
+}
+
+
+
+.chatlist-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent; 
+  display: none;
+}
+.chatlist-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+  display: none;
+}
+.chatlist-scrollbar::-webkit-scrollbar-thumb:active {
+  background: transparent;
+  display: none; 
+}
