@@ -20,6 +20,7 @@ const Search = React.lazy(() => import("../specific/Search"));
 const Notifications = React.lazy(() => import("../specific/Notifications"));
 const NewGroup = React.lazy(() => import("../specific/NewGroup"));
 const EditProfile = React.lazy(() => import("../dialogs/EditProfileDialog"));
+import { server } from "../../constants/config";
 
 const AppLayout = () => (WrappedComponent) => {
   return (props) => {
@@ -66,7 +67,7 @@ const AppLayout = () => (WrappedComponent) => {
 
     const reftechProfile = async () => {
       try {
-          const { data } = await axios.get('/api/v1/user/profile', { withCredentials: true });
+          const { data } = await axios.get(`${server}/api/v1/user/profile`, { withCredentials: true });
           dispatch(userExists(data.user));
       } catch (error) {
           console.error('Error fetching profile:', error);

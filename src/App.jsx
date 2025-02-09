@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { userExists, userNotExists } from "./redux/reducers/auth";
 import { Toaster } from "react-hot-toast";
 import { SocketProvider } from "./socket";
-
+import { server } from "./constants/config";
 
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./pages/Login"));
@@ -25,7 +25,7 @@ const App = () => {
 
   useEffect(()=>{
     axios
-      .get('/api/v1/user/profile',{withCredentials: true})
+      .get(`${server}/api/v1/user/profile`,{withCredentials: true})
       .then(({ data }) => dispatch(userExists(data.user)))
       .catch(() => dispatch(userNotExists())); 
   }, [dispatch])

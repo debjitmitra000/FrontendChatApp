@@ -9,6 +9,7 @@ import axios from "axios"
 import { userExists } from "../redux/reducers/auth";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
+import { server } from "../constants/config";
 
 const Login = () => {
   const [activeTab, setActiveTab] = useState("login");
@@ -71,7 +72,7 @@ const Login = () => {
     };
 
     try {
-      const { data } = await axios.post("/api/v1/user/login", {
+      const { data } = await axios.post(`${server}/api/v1/user/login`, {
           username: formData.username,
           password:  formData.password,
         },
@@ -121,7 +122,7 @@ const Login = () => {
       };
   
       try {
-        const { data } = await axios.post("/api/v1/user/newuser", formDataToSend,
+        const { data } = await axios.post(`${server}/api/v1/user/newuser`, formDataToSend,
           config
         );
         dispatch(userExists(data.user));

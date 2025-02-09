@@ -14,6 +14,8 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { userNotExists } from "../../redux/reducers/auth";
 import toast from "react-hot-toast";
+import { server } from "../../constants/config";
+
 
 const Navbar = ({ onSearchClick, onProfileClick, onNotificationsClick, onNewGroupClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,7 +32,7 @@ const Navbar = ({ onSearchClick, onProfileClick, onNotificationsClick, onNewGrou
   };
   const logoutHandler = async () => {
     try {
-      const { data } = await axios.delete("/api/v1/user/logout", {
+      const { data } = await axios.delete(`${server}/api/v1/user/logout`, {
         withCredentials: true,
       });
       dispatch(userNotExists());
