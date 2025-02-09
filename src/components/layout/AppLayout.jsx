@@ -67,8 +67,10 @@ const AppLayout = () => (WrappedComponent) => {
 
     const reftechProfile = async () => {
       try {
-          const { data } = await axios.get(`${server}/api/v1/user/profile`, { withCredentials: true });
-          dispatch(userExists(data.user));
+          axios
+            .get(`${server}/api/v1/user/profile`,{withCredentials: true})
+            .then(({ data }) => dispatch(userExists(data.user)))
+            .catch(() => dispatch(userNotExists()));
       } catch (error) {
           console.error('Error fetching profile:', error);
       }
