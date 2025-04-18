@@ -87,19 +87,14 @@
 ```bash
 # 1. Clone the repository
 git clone https://github.com/debjitmitra000/FrontendChatApp.git
-
 # 2. Navigate to the project directory
 cd FrontendChatApp
-
 # 3. Install dependencies
 npm install
-
 # 4. Create .env file with the following:
 VITE_SERVER=http://localhost:8000
-
 # 5. Start the development server
 npm run dev
-
 # 6. Build for production
 npm run build
 ```
